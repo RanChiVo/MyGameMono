@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Character/Jumping.png</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Character/WalkingLeft.png</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Character/WalkingRight.png</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Background/Background1.jpg</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Background/Background2.jpg</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Obstacle/Obstacle1.jpg</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Obstacle/Obstacle2.jpg</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Obstacle/Obstacle4.png</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Obstacle/Obstacle3.png</File>
+  </SourceFiles>
+</SourceFileCollection>
