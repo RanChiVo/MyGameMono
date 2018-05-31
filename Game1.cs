@@ -23,8 +23,13 @@ namespace MyGameMono
         Scrolling Ostacles3;
         Scrolling Ostacles4;
 
-        int speed=3;
+        int speed=10;
 
+        int score = 0;
+
+        bool IsTouch = false;
+
+      
 
 
 
@@ -59,27 +64,41 @@ namespace MyGameMono
         /// 
         protected void CheckCollision(List<Sprite> _sprite, Rectangle _rectangle)
         {
-            foreach (var sprite in _sprite)
+            Rectangle rectangle;
+            foreach (Sprite sprite in _sprite)
             {
-                if ((sprite.Velocity.X > 0 && sprite.IsTouchingLeft(_rectangle)) || (sprite.Velocity.X < 0 && sprite.IsTouchingRight(_rectangle)))
-
+                rectangle = new Rectangle((int)sprite._position.X, (int)sprite._position.Y, 160, 189);
+                if (rectangle.Intersects(_rectangle))
                 {
-                    sprite.Velocity.X = 0;
-                    speed = 0;
+                    IsTouch = true;
                 }
-
-                if ((sprite.Velocity.Y > 0 && sprite.IsTouchingTop(_rectangle)) || (sprite.Velocity.Y < 0 && sprite.IsTouchingBottom(_rectangle)))
-
-                {
-                    sprite.Velocity.Y = 0;
-                    speed = 0;
-                }
-
-                sprite.Position += sprite.Velocity;
-
-                sprite.Velocity = Vector2.Zero;
-
             }
+
+           // IsTouch = true;
+            //foreach (var sprite in _sprite)
+            //{
+                //if (sprite.IsTouchingLeft(_rectangle))
+                
+                //if ((sprite.Velocity.X > 0 && sprite.IsTouchingLeft(_rectangle)) || (sprite.Velocity.X < 0 && sprite.IsTouchingRight(_rectangle)))
+
+                //{
+                //    sprite.Velocity.X = 0;
+                //    IsTouch = true;
+
+                //}
+
+                //if ((sprite.Velocity.Y > 0 && sprite.IsTouchingTop(_rectangle)) || (sprite.Velocity.Y < 0 && sprite.IsTouchingBottom(_rectangle)))
+
+                //{
+                //    sprite.Velocity.Y = 0;
+                //    IsTouch = true;
+                //}
+
+                //sprite.Position += sprite.Velocity;
+
+                //sprite.Velocity = Vector2.Zero;
+
+              //}
         }
         protected override void LoadContent()
         {
@@ -91,10 +110,10 @@ namespace MyGameMono
             scrolling2 = new Scrolling(Content.Load<Texture2D>("Background/Background1"), new Rectangle(1000, 0, 1000, 800));
 
 
-            Ostacles1 = new Scrolling(Content.Load<Texture2D>("Obstacle/Obstacle1"), new Rectangle(100, 540, 100, 100));
-            Ostacles2 = new Scrolling(Content.Load<Texture2D>("Obstacle/Obstacle2"), new Rectangle(700, 540, 100, 100));
-            Ostacles3 = new Scrolling(Content.Load<Texture2D>("Obstacle/Obstacle3"), new Rectangle(400, 540, 200, 200));
-            Ostacles4 = new Scrolling(Content.Load<Texture2D>("Obstacle/Obstacle4"), new Rectangle(900, 540, 200, 200));
+            Ostacles1 = new Scrolling(Content.Load<Texture2D>("Obstacle/Obstacle1"), new Rectangle(800, 540, 100, 100));
+            Ostacles2 = new Scrolling(Content.Load<Texture2D>("Obstacle/Obstacle2"), new Rectangle(100, 70, 100, 100));
+            Ostacles3 = new Scrolling(Content.Load<Texture2D>("Obstacle/Obstacle3"), new Rectangle(900, 540, 200, 200));
+            Ostacles4 = new Scrolling(Content.Load<Texture2D>("Obstacle/Obstacle4"), new Rectangle(600, 540, 200, 200));
 
 
 
@@ -117,7 +136,7 @@ namespace MyGameMono
                         Right = Keys.Right,
                         Left = Keys.Left,
                         Jump = Keys.Space,
-
+                        
 
                     },
                 },
@@ -161,9 +180,11 @@ namespace MyGameMono
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-            speed = 10;
+            score++;
             scrolling1.Update(speed);
             scrolling2.Update(speed);
+
+        
 
             if (scrolling1.rectangle.X + scrolling1.texture.Width <= 0)
             {
@@ -184,9 +205,9 @@ namespace MyGameMono
             }
 
 
-            if (Ostacles2.rectangle.X + graphics.PreferredBackBufferWidth * 2 <= 0)
+            if (Ostacles2.rectangle.X + graphics.PreferredBackBufferWidth * 3 <= 0)
             {
-                Ostacles2.rectangle.X = Ostacles1.rectangle.X + Ostacles1.texture.Width;
+                Ostacles2.rectangle.X = Ostacles1.rectangle.X + graphics.PreferredBackBufferWidth;
 
             }
 
@@ -205,22 +226,24 @@ namespace MyGameMono
             {
                 sprite.Update(gameTime, _sprites);
 
-            }
 
-            if (speed > 0)
+            }
+            CheckCollision(_sprites, Ostacles1.rectangle);
+
+            CheckCollision(_sprites, Ostacles2.rectangle);
+
+
+            CheckCollision(_sprites, Ostacles3.rectangle);
+
+
+            CheckCollision(_sprites, Ostacles4.rectangle);
+
+
+            if (IsTouch == true)
             {
-                CheckCollision(_sprites, Ostacles1.rectangle);
-
-                CheckCollision(_sprites, Ostacles2.rectangle);
-
-
-                CheckCollision(_sprites, Ostacles3.rectangle);
-
-
-                CheckCollision(_sprites, Ostacles4.rectangle);
-
+                speed = 0;
             }
-            
+
             Ostacles3.Update(speed);
             Ostacles4.Update(speed);
 
@@ -229,8 +252,8 @@ namespace MyGameMono
             Ostacles2.Update(speed);
 
 
-
-
+            
+              
             base.Update(gameTime);
         }
 
@@ -246,12 +269,13 @@ namespace MyGameMono
 
             scrolling1.Draw(spriteBatch);
             scrolling2.Draw(spriteBatch);
+            
 
-
-
+            //spriteBatch.DrawString(font,score.ToString(), new Vector2(10, 10), Color.Black);
             foreach (var sprite in _sprites)
             {
                 sprite.Draw(spriteBatch);
+               
             }
 
 

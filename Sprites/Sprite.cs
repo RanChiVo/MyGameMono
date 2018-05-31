@@ -15,11 +15,11 @@ namespace MyGameMono.Sprites
     {
         #region Fields
 
-        protected AnimationManagerments _animationManager;
+        public AnimationManagerments _animationManager;
 
-        protected Dictionary<string, Animation> _animation;
+        public Dictionary<string, Animation> _animation;
 
-        protected Vector2 _position;
+        public Vector2 _position;
 
         public Rectangle  _rectangle
         {

@@ -13,6 +13,8 @@ namespace MyGameMono.Managerments
     {
         private Animation _animation;
 
+        public Rectangle _rectangle;
+
         private float _timer;
 
         public Vector2 Position { get; set; }
@@ -48,6 +50,9 @@ namespace MyGameMono.Managerments
 
         public void Update (GameTime gameTime)
         {
+            _rectangle = new Rectangle(_animation.CurrentFrame * _animation.FrameWidth, 0,
+                                                                _animation.FrameWidth, _animation.FrameHeight);
+
             _timer += (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             if(_timer > _animation.FrameSpeed)
