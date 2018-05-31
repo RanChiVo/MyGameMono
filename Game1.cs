@@ -15,7 +15,6 @@ namespace MyGameMono
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        List<Rectangle> ListRectangle;
         private List<Sprite> _sprites;
         Scrolling scrolling1;
         Scrolling scrolling2;
@@ -24,8 +23,8 @@ namespace MyGameMono
         Scrolling Ostacles3;
         Scrolling Ostacles4;
 
+        int speed=3;
 
-        
 
 
 
@@ -43,6 +42,9 @@ namespace MyGameMono
         /// related content.  Calling base.Initialize will enumerate through any components
         /// and initialize them as well.
         /// </summary>
+        /// 
+
+
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
@@ -54,29 +56,46 @@ namespace MyGameMono
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
         /// </summary>
+        /// 
+        protected void CheckCollision(List<Sprite> _sprite, Rectangle _rectangle)
+        {
+            foreach (var sprite in _sprite)
+            {
+                if ((sprite.Velocity.X > 0 && sprite.IsTouchingLeft(_rectangle)) || (sprite.Velocity.X < 0 && sprite.IsTouchingRight(_rectangle)))
+
+                {
+                    sprite.Velocity.X = 0;
+                    speed = 0;
+                }
+
+                if ((sprite.Velocity.Y > 0 && sprite.IsTouchingTop(_rectangle)) || (sprite.Velocity.Y < 0 && sprite.IsTouchingBottom(_rectangle)))
+
+                {
+                    sprite.Velocity.Y = 0;
+                    speed = 0;
+                }
+
+                sprite.Position += sprite.Velocity;
+
+                sprite.Velocity = Vector2.Zero;
+
+            }
+        }
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             scrolling1 = new Scrolling(Content.Load<Texture2D>("Background/Background1"), new Rectangle(0, 0, 1000, 800));
-            ListRectangle.Add(scrolling1.rectangle);
 
             scrolling2 = new Scrolling(Content.Load<Texture2D>("Background/Background1"), new Rectangle(1000, 0, 1000, 800));
-            ListRectangle.Add(scrolling2.rectangle);
+
 
             Ostacles1 = new Scrolling(Content.Load<Texture2D>("Obstacle/Obstacle1"), new Rectangle(100, 540, 100, 100));
-            ListRectangle.Add(Ostacles1.rectangle);
-
             Ostacles2 = new Scrolling(Content.Load<Texture2D>("Obstacle/Obstacle2"), new Rectangle(700, 540, 100, 100));
-            ListRectangle.Add(Ostacles2.rectangle);
-
             Ostacles3 = new Scrolling(Content.Load<Texture2D>("Obstacle/Obstacle3"), new Rectangle(400, 540, 200, 200));
-            ListRectangle.Add(Ostacles3.rectangle);
-
-
             Ostacles4 = new Scrolling(Content.Load<Texture2D>("Obstacle/Obstacle4"), new Rectangle(900, 540, 200, 200));
-            ListRectangle.Add(Ostacles4.rectangle);
+
 
 
             var animations = new Dictionary<string, Animation>()
@@ -142,9 +161,9 @@ namespace MyGameMono
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-
-            scrolling1.Update(10);
-            scrolling2.Update(10);
+            speed = 10;
+            scrolling1.Update(speed);
+            scrolling2.Update(speed);
 
             if (scrolling1.rectangle.X + scrolling1.texture.Width <= 0)
             {
@@ -161,7 +180,7 @@ namespace MyGameMono
 
             if (Ostacles1.rectangle.X + Ostacles1.texture.Width <= 0)
             {
-                Ostacles1.rectangle.X = Ostacles2.rectangle.X + graphics.PreferredBackBufferWidth*3;
+                Ostacles1.rectangle.X = Ostacles2.rectangle.X + graphics.PreferredBackBufferWidth * 3;
             }
 
 
@@ -171,13 +190,13 @@ namespace MyGameMono
 
             }
 
-            if (Ostacles3.rectangle.X + Ostacles4.texture.Width  <= 0)
+            if (Ostacles3.rectangle.X + Ostacles4.texture.Width <= 0)
             {
                 Ostacles3.rectangle.X = Ostacles4.rectangle.X + graphics.PreferredBackBufferWidth;
             }
 
-            
-            if (Ostacles3.rectangle.X + graphics.PreferredBackBufferWidth *2<= 0)
+
+            if (Ostacles3.rectangle.X + graphics.PreferredBackBufferWidth * 2 <= 0)
             {
                 Ostacles4.rectangle.X = Ostacles3.rectangle.X + Ostacles3.texture.Width;
 
@@ -185,14 +204,29 @@ namespace MyGameMono
             foreach (var sprite in _sprites)
             {
                 sprite.Update(gameTime, _sprites);
+
             }
-            Ostacles1.Update(10);
-            Ostacles2.Update(10);
+
+            if (speed > 0)
+            {
+                CheckCollision(_sprites, Ostacles1.rectangle);
+
+                CheckCollision(_sprites, Ostacles2.rectangle);
 
 
-          
-            Ostacles3.Update(10);
-            Ostacles4.Update(10);
+                CheckCollision(_sprites, Ostacles3.rectangle);
+
+
+                CheckCollision(_sprites, Ostacles4.rectangle);
+
+            }
+            
+            Ostacles3.Update(speed);
+            Ostacles4.Update(speed);
+
+
+            Ostacles1.Update(speed);
+            Ostacles2.Update(speed);
 
 
 
@@ -214,7 +248,7 @@ namespace MyGameMono
             scrolling2.Draw(spriteBatch);
 
 
-           
+
             foreach (var sprite in _sprites)
             {
                 sprite.Draw(spriteBatch);

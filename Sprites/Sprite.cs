@@ -21,7 +21,7 @@ namespace MyGameMono.Sprites
 
         protected Vector2 _position;
 
-        public Rectangle  Rectangle
+        public Rectangle  _rectangle
         {
             get
             {
@@ -180,38 +180,38 @@ namespace MyGameMono.Sprites
           
         }
 
-        protected bool IsTouchingLeft(Rectangle rectangle)
+        public bool IsTouchingLeft(Rectangle rectangle)
         {
-            return this.Rectangle.Right + this.Velocity.X > rectangle.Left &&
-                   this.Rectangle.Left < rectangle.Left &&
-                   this.Rectangle.Bottom > rectangle.Top &&
-                   this.Rectangle.Top < rectangle.Bottom;
+            return this._rectangle.Right + this.Velocity.X > rectangle.Left &&
+                   this._rectangle.Left < rectangle.Left &&
+                   this._rectangle.Bottom > rectangle.Top &&
+                   this._rectangle.Top < rectangle.Bottom;
         }
 
 
-        protected bool IsTouchingRight(Rectangle rectangle)
+        public bool IsTouchingRight(Rectangle rectangle)
         {
-            return this.Rectangle.Left + this.Velocity.X < rectangle.Right &&
-                   this.Rectangle.Right > rectangle.Right &&
-                   this.Rectangle.Bottom > rectangle.Top &&
-                   this.Rectangle.Top < rectangle.Bottom;
+            return this._rectangle.Left + this.Velocity.X < rectangle.Right &&
+                   this._rectangle.Right > rectangle.Right &&
+                   this._rectangle.Bottom > rectangle.Top &&
+                   this._rectangle.Top < rectangle.Bottom;
         }
 
 
-        protected bool IsTouchingTop(Rectangle rectangle)
+        public bool IsTouchingTop(Rectangle rectangle)
         {
-            return this.Rectangle.Bottom  + this.Velocity.Y > rectangle.Top &&
-                   this.Rectangle.Top < rectangle.Top &&
-                   this.Rectangle.Right > rectangle.Left &&
-                   this.Rectangle.Left < rectangle.Right;
+            return this._rectangle.Bottom  + this.Velocity.Y > rectangle.Top &&
+                   this._rectangle.Top < rectangle.Top &&
+                   this._rectangle.Right > rectangle.Left &&
+                   this._rectangle.Left < rectangle.Right;
         }
 
-        protected bool IsTouchingBottom(Rectangle rectangle)
+        public bool IsTouchingBottom(Rectangle rectangle)
         {
-            return this.Rectangle.Top + this.Velocity.Y < rectangle.Bottom &&
-                   this.Rectangle.Bottom > rectangle.Bottom &&
-                   this.Rectangle.Right > rectangle.Left &&
-                   this.Rectangle.Left < rectangle.Right;
+            return this._rectangle.Top + this.Velocity.Y < rectangle.Bottom &&
+                   this._rectangle.Bottom > rectangle.Bottom &&
+                   this._rectangle.Right > rectangle.Left &&
+                   this._rectangle.Left < rectangle.Right;
         }
         #endregion
     }
