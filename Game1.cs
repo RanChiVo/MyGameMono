@@ -27,6 +27,7 @@ namespace MyGameMono
         Scrolling Ostacles3;
         Scrolling Ostacles4;
 
+<<<<<<< HEAD
         Song song;
         // SoundEffect song2;
         Song song2;
@@ -42,6 +43,15 @@ namespace MyGameMono
         bool IsTouch = false;
 
         int d = 0;
+=======
+        int speed=10;
+
+        int score = 0;
+
+        bool IsTouch = false;
+
+      
+>>>>>>> 276909b5e9dae39bc19ac829dc53d73b8da6f583
 
         // SoundEffect _soundEffect;
 
@@ -92,6 +102,7 @@ namespace MyGameMono
                 if (rectangle.Intersects(_rectangle))
                 {
                     IsTouch = true;
+<<<<<<< HEAD
                     MediaPlayer.Play(song2);
                 }
             }
@@ -121,6 +132,36 @@ namespace MyGameMono
             //sprite.Velocity = Vector2.Zero;
 
             //}
+=======
+                }
+            }
+
+           // IsTouch = true;
+            //foreach (var sprite in _sprite)
+            //{
+                //if (sprite.IsTouchingLeft(_rectangle))
+                
+                //if ((sprite.Velocity.X > 0 && sprite.IsTouchingLeft(_rectangle)) || (sprite.Velocity.X < 0 && sprite.IsTouchingRight(_rectangle)))
+
+                //{
+                //    sprite.Velocity.X = 0;
+                //    IsTouch = true;
+
+                //}
+
+                //if ((sprite.Velocity.Y > 0 && sprite.IsTouchingTop(_rectangle)) || (sprite.Velocity.Y < 0 && sprite.IsTouchingBottom(_rectangle)))
+
+                //{
+                //    sprite.Velocity.Y = 0;
+                //    IsTouch = true;
+                //}
+
+                //sprite.Position += sprite.Velocity;
+
+                //sprite.Velocity = Vector2.Zero;
+
+              //}
+>>>>>>> 276909b5e9dae39bc19ac829dc53d73b8da6f583
         }
         protected override void LoadContent()
         {
@@ -138,9 +179,16 @@ namespace MyGameMono
 
             font = Content.Load<SpriteFont>("font");
 
+<<<<<<< HEAD
             _soundEffect = Content.Load<Song>("jumpmusic");
             song2 = Content.Load<Song>("_Touch");
             song = Content.Load<Song>("Song");
+=======
+            Ostacles1 = new Scrolling(Content.Load<Texture2D>("Obstacle/Obstacle1"), new Rectangle(800, 540, 100, 100));
+            Ostacles2 = new Scrolling(Content.Load<Texture2D>("Obstacle/Obstacle2"), new Rectangle(100, 70, 100, 100));
+            Ostacles3 = new Scrolling(Content.Load<Texture2D>("Obstacle/Obstacle3"), new Rectangle(900, 540, 200, 200));
+            Ostacles4 = new Scrolling(Content.Load<Texture2D>("Obstacle/Obstacle4"), new Rectangle(600, 540, 200, 200));
+>>>>>>> 276909b5e9dae39bc19ac829dc53d73b8da6f583
 
             MediaPlayer.Play(song);
 
@@ -207,7 +255,7 @@ namespace MyGameMono
                         Right = Keys.Right,
                         Left = Keys.Left,
                         Jump = Keys.Space,
-
+                        
 
                     },
                 },
@@ -266,6 +314,7 @@ namespace MyGameMono
 
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
+<<<<<<< HEAD
 
             scrolling1.Update(speed);
             scrolling2.Update(speed);
@@ -275,6 +324,13 @@ namespace MyGameMono
             score = Convert.ToInt32(_timer);
 
 
+=======
+            score++;
+            scrolling1.Update(speed);
+            scrolling2.Update(speed);
+
+        
+>>>>>>> 276909b5e9dae39bc19ac829dc53d73b8da6f583
 
             if (scrolling1.rectangle.X + scrolling1.texture.Width <= 0)
             {
@@ -315,8 +371,11 @@ namespace MyGameMono
             {
                 sprite.Update(gameTime, _sprites, _soundEffect, IsObstancle);
 
-            }
 
+            }
+            CheckCollision(_sprites, Ostacles1.rectangle);
+
+<<<<<<< HEAD
             foreach (var bat in BatSprite)
             {
                 bat.Update(gameTime, BatSprite, _soundEffect, IsObstancle);
@@ -329,8 +388,17 @@ namespace MyGameMono
             CheckCollision(_sprites, Ostacles3.rectangle);
 
             CheckCollision(_sprites, Ostacles4.rectangle);
+=======
+            CheckCollision(_sprites, Ostacles2.rectangle);
 
 
+            CheckCollision(_sprites, Ostacles3.rectangle);
+
+>>>>>>> 276909b5e9dae39bc19ac829dc53d73b8da6f583
+
+            CheckCollision(_sprites, Ostacles4.rectangle);
+
+<<<<<<< HEAD
             if (IsTouch == true)
             {
                 speed = 0;
@@ -339,7 +407,12 @@ namespace MyGameMono
                 //      MediaPlayer.Stop();
                 score = Convert.ToInt32(_timer);
                 _timer = score;
+=======
+>>>>>>> 276909b5e9dae39bc19ac829dc53d73b8da6f583
 
+            if (IsTouch == true)
+            {
+                speed = 0;
             }
 
             Ostacles3.Update(speed);
@@ -348,6 +421,7 @@ namespace MyGameMono
             Ostacles1.Update(speed);
             Ostacles2.Update(speed);
 
+<<<<<<< HEAD
             if (speed == 0 && Keyboard.GetState().IsKeyDown(Keys.Enter))
             {
                 this.LoadContent();
@@ -357,6 +431,11 @@ namespace MyGameMono
                  d = 0;
             }
 
+=======
+
+            
+              
+>>>>>>> 276909b5e9dae39bc19ac829dc53d73b8da6f583
             base.Update(gameTime);
         }
 
@@ -372,12 +451,17 @@ namespace MyGameMono
 
             scrolling1.Draw(spriteBatch);//Draw background
             scrolling2.Draw(spriteBatch);
+            
 
             //spriteBatch.DrawString(font,score.ToString(), new Vector2(10, 10), Color.Black);
             foreach (var sprite in _sprites)
             {
                 sprite.Draw(spriteBatch);
+<<<<<<< HEAD
 
+=======
+               
+>>>>>>> 276909b5e9dae39bc19ac829dc53d73b8da6f583
             }
 
             Ostacles1.Draw(spriteBatch);//Draw Obstacle1

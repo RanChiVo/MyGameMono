@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<<<<<<< HEAD
   <SourceFile>D:/GitHub/MyGameMono/MyGameMono/Content/Obstacle/Obstacle1.png</SourceFile>
   <SourceTime>2015-03-26T08:54:40-07:00</SourceTime>
   <DestFile>D:/GitHub/MyGameMono/MyGameMono/Content/bin/Windows/Obstacle/Obstacle1.xnb</DestFile>
   <DestTime>2018-06-03T01:15:18.5301569-07:00</DestTime>
+=======
+  <SourceFile>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Obstacle/Obstacle1.jpg</SourceFile>
+  <SourceTime>2018-05-30T15:35:13.8102746-07:00</SourceTime>
+  <DestFile>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/bin/Windows/Obstacle/Obstacle1.xnb</DestFile>
+  <DestTime>2018-05-31T01:53:44.1052782-07:00</DestTime>
+>>>>>>> 276909b5e9dae39bc19ac829dc53d73b8da6f583
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T07:05:36-08:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
