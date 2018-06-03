@@ -1,14 +1,15 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using System;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using MyGameMono.Models;
+using MyGameMono.Sprites;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyGameMono.Models
 {
     public class Animation
     {
+        public Rectangle boundingBox;
 
         public int CurrentFrame { get; set; }
 
@@ -19,7 +20,6 @@ namespace MyGameMono.Models
         public float FrameSpeed { get; set; }
 
         public int FrameWidth { get { return Texture.Width/FrameCount; } }
-
 
         public bool IsLooping { get; set; }
 
@@ -36,6 +36,7 @@ namespace MyGameMono.Models
             FrameSpeed = 0.2f;
         }
 
+     
 
 
     }

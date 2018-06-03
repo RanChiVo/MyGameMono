@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using MyGameMono.Managerments;
 using MyGameMono.Models;
 using System;
@@ -15,24 +17,25 @@ namespace MyGameMono.Sprites
     {
         #region Fields
 
-        protected AnimationManagerments _animationManager;
+        public AnimationManagerments _animationManager;
 
-        protected Dictionary<string, Animation> _animation;
+        public Dictionary<string, Animation> _animation;
 
-        protected Vector2 _position;
+        public Vector2 _position;
 
-        public Rectangle  _rectangle
-        {
-            get
-            {
-                return new Rectangle((int)Position.X, (int)Position.Y, _texture.Width, _texture.Height); 
-            }
-        }
+        //public Rectangle _rectangle
+        //{
+        //    get
+        //    {
+        //        return new Rectangle((int)Position.X, (int)Position.Y, _texture.Width, _texture.Height);
+        //    }
+        //}
         protected Texture2D _texture;
 
+      //  SoundEffect effect;
 
-        bool jumping= false;
-        float StarY = 540 ;
+        bool jumping = false;
+        float StarY = 540;
         float jumpspeed;
         #endregion
 
@@ -63,7 +66,7 @@ namespace MyGameMono.Sprites
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-           
+
 
             if (_texture != null)
             {
@@ -75,11 +78,11 @@ namespace MyGameMono.Sprites
             }
 
             else throw new Exception("This ain't right!...");
-           
+
         }
 
 
-        public virtual void Move()
+        public virtual void Move(Song effect/*SoundEffect effect*/)
         {
             if (Keyboard.GetState().IsKeyDown(Input.Up))
             {
@@ -106,35 +109,29 @@ namespace MyGameMono.Sprites
 
                 jumping = true;
                 jumpspeed = -20;
-              
+                //     effect.Play();
+                MediaPlayer.Play(effect);
             }
-           
+
         }
 
-        protected virtual void SetAnimation()
+        protected virtual void SetAnimation(bool IsObstacle)
         {
-          
 
-            if (Velocity.X > 0)
+            if (Velocity.X > 0 && IsObstacle == false)
             {
                 _animationManager.Play(_animation["WalkRight"]);
-           
 
             }
-
-
-            else if (Velocity.X < 0)
+            else if (Velocity.X < 0 && IsObstacle == false)
             {
                 _animationManager.Play(_animation["WalkLeft"]);
-                
+
             }
-
-
-
-            else if (Velocity.Y > 0)
+            else if (Velocity.Y > 0 && IsObstacle == false)
             {
                 _animationManager.Play(_animation["Jump"]);
-               
+
             }
             else if (jumping)
             {
@@ -145,22 +142,21 @@ namespace MyGameMono.Sprites
                     _position.Y = StarY;
                     jumping = false;
 
-
                 }
 
-
-
             }
+            else if (IsObstacle == true)
 
+            {
 
+                _animationManager.Play(_animation["FlyLeft"]);
+            }
         }
 
         public Sprite(Dictionary<string, Animation> animations)
         {
             _animation = animations;
             _animationManager = new AnimationManagerments(_animation.First().Value);
-            
-
         }
 
         public Sprite(Texture2D texture, Rectangle rectangle)
@@ -169,50 +165,21 @@ namespace MyGameMono.Sprites
             _position.Y = StarY;
 
         }
-
-        public virtual void Update(GameTime gameTime, List<Sprite> sprites)
+        public Sprite()
         {
-            Move();
-            SetAnimation();
+
+        }
+
+        public virtual void Update(GameTime gameTime, List<Sprite> sprites, Song sound/*SoundEffect sound*/, bool IsObstacle)
+        {
+            Move(sound);
+            SetAnimation(IsObstacle);
             _animationManager.Update(gameTime);
             Position += Velocity;
             Velocity = Vector2.Zero;
-          
+
         }
 
-        public bool IsTouchingLeft(Rectangle rectangle)
-        {
-            return this._rectangle.Right + this.Velocity.X > rectangle.Left &&
-                   this._rectangle.Left < rectangle.Left &&
-                   this._rectangle.Bottom > rectangle.Top &&
-                   this._rectangle.Top < rectangle.Bottom;
-        }
-
-
-        public bool IsTouchingRight(Rectangle rectangle)
-        {
-            return this._rectangle.Left + this.Velocity.X < rectangle.Right &&
-                   this._rectangle.Right > rectangle.Right &&
-                   this._rectangle.Bottom > rectangle.Top &&
-                   this._rectangle.Top < rectangle.Bottom;
-        }
-
-
-        public bool IsTouchingTop(Rectangle rectangle)
-        {
-            return this._rectangle.Bottom  + this.Velocity.Y > rectangle.Top &&
-                   this._rectangle.Top < rectangle.Top &&
-                   this._rectangle.Right > rectangle.Left &&
-                   this._rectangle.Left < rectangle.Right;
-        }
-
-        public bool IsTouchingBottom(Rectangle rectangle)
-        {
-            return this._rectangle.Top + this.Velocity.Y < rectangle.Bottom &&
-                   this._rectangle.Bottom > rectangle.Bottom &&
-                   this._rectangle.Right > rectangle.Left &&
-                   this._rectangle.Left < rectangle.Right;
-        }
         #endregion
     }
 }

@@ -18,5 +18,9 @@ namespace MyGameMono.Models
         public Keys Left { get; set; }
 
         public Keys Jump { get; set; }
+
+        public Keys Touch { get; set; }
+
+        public bool IsObstacle { get; set; }
     }
 }

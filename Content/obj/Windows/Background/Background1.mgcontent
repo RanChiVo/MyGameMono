@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Background/Background1.jpg</SourceFile>
-  <SourceTime>2018-05-30T14:13:38.3563861-07:00</SourceTime>
-  <DestFile>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/bin/Windows/Background/Background1.xnb</DestFile>
-  <DestTime>2018-05-30T16:56:44.4343096-07:00</DestTime>
+  <SourceFile>D:/GitHub/MyGameMono/MyGameMono/Content/Background/background1.png</SourceFile>
+  <SourceTime>2018-06-02T13:35:24.5379346-07:00</SourceTime>
+  <DestFile>D:/GitHub/MyGameMono/MyGameMono/Content/bin/Windows/Background/background1.xnb</DestFile>
+  <DestTime>2018-06-03T01:15:18.1503953-07:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T07:05:36-08:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>D:/GitHub/MyGameMono/MyGameMono/Content/jumpMusic.mp3</SourceFile>
+  <SourceTime>2018-06-02T01:22:46.9017838-07:00</SourceTime>
+  <DestFile>D:/GitHub/MyGameMono/MyGameMono/Content/bin/Windows/jumpMusic.xnb</DestFile>
+  <DestTime>2018-06-03T01:15:19.4770133-07:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2017-03-01T07:05:36-08:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2017-03-01T07:05:36-08:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>D:/GitHub/MyGameMono/MyGameMono/Content/bin/Windows/jumpMusic.wma</string>
+  </BuildOutput>
+</PipelineBuildEvent>

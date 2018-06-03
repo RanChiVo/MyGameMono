@@ -20,7 +20,6 @@ namespace MyGameMono
     }
     class Scrolling : Background
     {
-
         public Scrolling(Texture2D newTexture, Rectangle newrectangle)
         {
             texture = newTexture;

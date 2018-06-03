@@ -13,9 +13,16 @@ namespace MyGameMono.Managerments
     {
         private Animation _animation;
 
+        public Rectangle _rectangle;
+
         private float _timer;
 
         public Vector2 Position { get; set; }
+       
+
+        private int _score;
+
+        public int Score { get => _score; set => _score = value; }
 
         public AnimationManagerments(Animation animation)
         {
@@ -42,13 +49,19 @@ namespace MyGameMono.Managerments
         public void Stop()
         {
             _timer = 0f;
+            Score =Convert.ToInt32( _timer);
             _animation.CurrentFrame = 0;
         }
 
 
         public void Update (GameTime gameTime)
         {
+            _rectangle = new Rectangle(_animation.CurrentFrame * _animation.FrameWidth, 0,
+                                                                _animation.FrameWidth, _animation.FrameHeight);
+
             _timer += (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            _score = Convert.ToInt32(_timer);
 
             if(_timer > _animation.FrameSpeed)
             {
