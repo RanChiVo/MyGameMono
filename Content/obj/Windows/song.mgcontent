@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/GitHub/MyGameMono/MyGameMono/Content/song.mp3</SourceFile>
+  <SourceFile>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/song.mp3</SourceFile>
   <SourceTime>2018-06-01T16:15:30.5371501-07:00</SourceTime>
-  <DestFile>D:/GitHub/MyGameMono/MyGameMono/Content/bin/Windows/song.xnb</DestFile>
-  <DestTime>2018-06-03T01:15:17.7581168-07:00</DestTime>
+  <DestFile>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/bin/Windows/song.xnb</DestFile>
+  <DestTime>2018-06-03T13:20:32.3160685-07:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2017-03-01T07:05:36-08:00</ImporterTime>
   <Processor>SongProcessor</Processor>
@@ -15,6 +15,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>D:/GitHub/MyGameMono/MyGameMono/Content/bin/Windows/song.wma</string>
+    <string>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/bin/Windows/song.wma</string>
   </BuildOutput>
 </PipelineBuildEvent>

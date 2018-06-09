@@ -170,18 +170,6 @@
 /processorParam:TextureFormat=Color
 /build:Obstacle/walkright.png
 
-#begin Obstacle/Obstacle5.jpg
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Obstacle/Obstacle5.jpg
-
 #begin Obstacle/head.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -205,4 +193,16 @@
 /processor:SongProcessor
 /processorParam:Quality=Best
 /build:jumpMusic.mp3
+
+#begin Obstacle/Obstacle5.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Obstacle/Obstacle5.png
 

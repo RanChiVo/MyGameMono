@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/GitHub/MyGameMono/MyGameMono/Content/Obstacle/walkletf.png</SourceFile>
+  <SourceFile>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Obstacle/walkletf.png</SourceFile>
   <SourceTime>2018-06-02T20:25:21.4010605-07:00</SourceTime>
-  <DestFile>D:/GitHub/MyGameMono/MyGameMono/Content/bin/Windows/Obstacle/walkletf.xnb</DestFile>
-  <DestTime>2018-06-03T01:15:18.9414509-07:00</DestTime>
+  <DestFile>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/bin/Windows/Obstacle/walkletf.xnb</DestFile>
+  <DestTime>2018-06-03T13:20:33.8546742-07:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T07:05:36-08:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

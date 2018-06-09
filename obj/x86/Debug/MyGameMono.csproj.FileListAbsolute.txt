@@ -78,3 +78,15 @@ D:\GitHub\MyGameMono\MyGameMono\bin\Windows\x86\Debug\Content\Obstacle\head.xnb
 D:\GitHub\MyGameMono\MyGameMono\bin\Windows\x86\Debug\Content\_Touch.wma
 D:\GitHub\MyGameMono\MyGameMono\bin\Windows\x86\Debug\Content\_Touch.xnb
 D:\GitHub\MyGameMono\MyGameMono\bin\Windows\x86\Debug\Content\jumpMusic.wma
+C:\Users\me\source\repos\MyGameMono\MyGameMono\bin\Windows\x86\Debug\Content\Obstacle\FlyLeft.xnb
+C:\Users\me\source\repos\MyGameMono\MyGameMono\bin\Windows\x86\Debug\Content\Obstacle\head.xnb
+C:\Users\me\source\repos\MyGameMono\MyGameMono\bin\Windows\x86\Debug\Content\Obstacle\walkletf.xnb
+C:\Users\me\source\repos\MyGameMono\MyGameMono\bin\Windows\x86\Debug\Content\Obstacle\walkright.xnb
+C:\Users\me\source\repos\MyGameMono\MyGameMono\bin\Windows\x86\Debug\Content\Font.xnb
+C:\Users\me\source\repos\MyGameMono\MyGameMono\bin\Windows\x86\Debug\Content\jumpMusic.wma
+C:\Users\me\source\repos\MyGameMono\MyGameMono\bin\Windows\x86\Debug\Content\jumpmusic.xnb
+C:\Users\me\source\repos\MyGameMono\MyGameMono\bin\Windows\x86\Debug\Content\song.wma
+C:\Users\me\source\repos\MyGameMono\MyGameMono\bin\Windows\x86\Debug\Content\song.xnb
+C:\Users\me\source\repos\MyGameMono\MyGameMono\bin\Windows\x86\Debug\Content\_Touch.wma
+C:\Users\me\source\repos\MyGameMono\MyGameMono\bin\Windows\x86\Debug\Content\_Touch.xnb
+C:\Users\me\source\repos\MyGameMono\MyGameMono\bin\Windows\x86\Debug\Content\Obstacle\Obstacle5.xnb

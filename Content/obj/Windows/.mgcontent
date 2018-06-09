@@ -4,23 +4,23 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>D:/GitHub/MyGameMono/MyGameMono/Content/Character/Jumping.png</File>
-    <File>D:/GitHub/MyGameMono/MyGameMono/Content/Character/WalkingLeft.png</File>
-    <File>D:/GitHub/MyGameMono/MyGameMono/Content/Character/WalkingRight.png</File>
-    <File>D:/GitHub/MyGameMono/MyGameMono/Content/Obstacle/Obstacle4.png</File>
-    <File>D:/GitHub/MyGameMono/MyGameMono/Content/Obstacle/Obstacle3.png</File>
-    <File>D:/GitHub/MyGameMono/MyGameMono/Content/song.mp3</File>
-    <File>D:/GitHub/MyGameMono/MyGameMono/Content/Background/background1.png</File>
-    <File>D:/GitHub/MyGameMono/MyGameMono/Content/Background/background2.png</File>
-    <File>D:/GitHub/MyGameMono/MyGameMono/Content/Obstacle/Obstacle1.png</File>
-    <File>D:/GitHub/MyGameMono/MyGameMono/Content/Obstacle/Obstacle2.png</File>
-    <File>D:/GitHub/MyGameMono/MyGameMono/Content/Font.spritefont</File>
-    <File>D:/GitHub/MyGameMono/MyGameMono/Content/Obstacle/FlyLeft.png</File>
-    <File>D:/GitHub/MyGameMono/MyGameMono/Content/Obstacle/walkletf.png</File>
-    <File>D:/GitHub/MyGameMono/MyGameMono/Content/Obstacle/walkright.png</File>
-    <File>D:/GitHub/MyGameMono/MyGameMono/Content/Obstacle/Obstacle5.jpg</File>
-    <File>D:/GitHub/MyGameMono/MyGameMono/Content/Obstacle/head.png</File>
-    <File>D:/GitHub/MyGameMono/MyGameMono/Content/_Touch.mp3</File>
-    <File>D:/GitHub/MyGameMono/MyGameMono/Content/jumpMusic.mp3</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Character/Jumping.png</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Character/WalkingLeft.png</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Character/WalkingRight.png</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Obstacle/Obstacle4.png</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Obstacle/Obstacle3.png</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/song.mp3</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Background/background1.png</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Background/background2.png</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Obstacle/Obstacle1.png</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Obstacle/Obstacle2.png</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Font.spritefont</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Obstacle/FlyLeft.png</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Obstacle/walkletf.png</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Obstacle/walkright.png</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Obstacle/head.png</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/_Touch.mp3</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/jumpMusic.mp3</File>
+    <File>C:/Users/me/source/repos/MyGameMono/MyGameMono/Content/Obstacle/Obstacle5.png</File>
   </SourceFiles>
 </SourceFileCollection>

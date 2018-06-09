@@ -20,10 +20,9 @@ namespace MyGameMono.Models
         public Keys Jump { get; set; }
 
         public Keys Touch { get; set; }
-<<<<<<< HEAD
+
 
         public bool IsObstacle { get; set; }
-=======
->>>>>>> 276909b5e9dae39bc19ac829dc53d73b8da6f583
+
     }
 }

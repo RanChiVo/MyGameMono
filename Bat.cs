@@ -28,6 +28,10 @@ namespace MyGameMono
         {
             spriteBatch.Draw(Texture, _rectangle , Color.White);
         }
-
+        public void Update()
+        {
+            _rectangle.X = 400;
+            _rectangle.Y = 600;
+        }
     }
 }
